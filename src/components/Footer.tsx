@@ -1,11 +1,20 @@
+import Image from 'next/image';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-100 mt-auto py-10 border-t border-gray-200">
       <div className="max-w-5xl mx-auto px-6 text-center">
         {/* Brand */}
-        <div className="mb-6">
-          <h3 className="text-2xl font-bold text-gray-800">DimasKuliner</h3>
-          <div className="w-14 h-1 bg-green-600 mx-auto mt-2 rounded-full"></div>
+        <div className="mb-6 flex justify-center items-center flex-col gap-2">
+          <Image
+            src="/logo.png"
+            alt="DimasKuliner Logo"
+            width={150}
+            height={100}
+            className="max-h-12 object-contain"
+            priority
+          />
+          <div className="w-14 h-1 bg-green-600 rounded-full"></div>
         </div>
 
         {/* Contact Info */}
@@ -38,7 +47,6 @@ export default function Footer() {
               aria-label={icon.label}
             >
               <div className={`w-5 h-5 ${icon.color}`}>
-                {/* You can swap these with actual icon components */}
                 <span className="block w-full h-full bg-current rounded-full" />
               </div>
             </a>
